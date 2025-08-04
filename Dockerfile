@@ -1,15 +1,16 @@
 FROM python:3.10.13-slim
 
-# Installer les dépendances système nécessaires
+# Installer les dépendances système nécessaires, y compris git et les certificats
 RUN apt-get update && apt-get install -y \
     libglib2.0-0 libsm6 libxrender1 libxext6 tesseract-ocr \
-    git \
+    ca-certificates git \
     && apt-get clean
 
-# Définir le dossier de travail
-WORKDIR /app
+# Mettre à jour les certificats
+RUN update-ca-certificates
 
-# Copier tous les fichiers
+# Copier les fichiers
+WORKDIR /app
 COPY . .
 
 # Installer les dépendances Python
