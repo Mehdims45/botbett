@@ -1,0 +1,6 @@
+flask
+requests
+pytesseract
+Pillow
+snscrape @ git+https://github.com/Mehdims45/snscrape.git
+python-telegram-bot==13.15
