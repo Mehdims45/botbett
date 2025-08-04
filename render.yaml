@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: bot-paris-telegram
+    env: python
+    plan: free # Important pour ne pas avoir de frais
+    buildCommand: "chmod +x build.sh && ./build.sh"
+    startCommand: "python main.py"
+    envVars:
+      - key: TELEGRAM_TOKEN
+        sync: false # Ne pas synchroniser la valeur depuis le repo
+      - key: CHAT_ID
+        sync: false # Ne pas synchroniser la valeur depuis le repo
