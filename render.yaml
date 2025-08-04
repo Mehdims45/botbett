@@ -2,12 +2,12 @@ services:
   - type: web
     name: bot-paris-telegram
     env: python
-    pythonVersion: 3.11.9
-    plan: free # Important pour ne pas avoir de frais
-    buildCommand: "chmod +x build.sh && ./build.sh"
+    pythonVersion: 3.10.13  # ✅ Plus sûr pour snscrape, 3.11.9 peut encore poser problème
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
     startCommand: "python main.py"
     envVars:
       - key: TELEGRAM_TOKEN
-        sync: false # Ne pas synchroniser la valeur depuis le repo
+        sync: false
       - key: CHAT_ID
-        sync: false # Ne pas synchroniser la valeur depuis le repo
+        sync: false
