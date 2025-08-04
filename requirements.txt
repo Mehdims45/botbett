@@ -2,5 +2,5 @@ flask
 requests
 pytesseract
 Pillow
-snscrape
+snscrape @ git+https://github.com/YOUR_USERNAME/snscrape.git
 python-telegram-bot==13.15
