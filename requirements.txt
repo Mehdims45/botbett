@@ -2,5 +2,5 @@ flask
 requests
 pytesseract
 Pillow
-snscrape-modern
+snscrape
 python-telegram-bot==13.15
