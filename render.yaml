@@ -2,6 +2,7 @@ services:
   - type: web
     name: bot-paris-telegram
     env: python
+    pythonVersion: 3.10.13
     plan: free # Important pour ne pas avoir de frais
     buildCommand: "chmod +x build.sh && ./build.sh"
     startCommand: "python main.py"
